@@ -7,11 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        <button ion-item *ngFor="let item of stations" (click)="play(item.url)">
-            {{item.name}}
-        </button>
-    </ion-list>
-    <button ion-button (click)="stop()">Stop</button>
-    <!-- <div id="textpositiondiv">Time played: <span id="textposition">stopped</span></div> -->
+    <div *ngIf="player.plaY">
+        <img src="assets/img/play.png" class="play" (click)="play('http://198.24.156.115:9300/;')"/>
+    </div>
+    <div *ngIf="!player.plaY">
+        <img src="assets/img/pause.png" class="play animated flip" (click)="pause()"/>
+    </div>
 </ion-content>

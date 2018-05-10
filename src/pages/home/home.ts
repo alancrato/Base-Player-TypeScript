@@ -1,29 +1,55 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, Injectable } from '@angular/core';
 import { Html5Audio } from "../../providers/html5audio";
+import { NavController } from "ionic-angular";
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+@Injectable()
 export class HomePage {
 
   stations = [
     {
-      name: "Dance",
-      url: "http://stream.dancewave.online:8080/dance.mp3"
+      name: "Rede",
+      url: "http://198.24.156.115:9300/;"
     },
     {
-      name: "GrindFM",
-      url: "http://radio.goha.ru:8000/grindfm.ogg"
+      name: "Aracati",
+      url: "http://198.24.156.115:9304/;"
     },
     {
-      name: "Nashe",
-      url: "http://nashe1.hostingradio.ru:80/nashe-128.mp3"
+      name: "Crateús",
+      url: "http://198.24.156.115:9308/;"
+    },
+    {
+      name: "Paraipaba",
+      url: "http://198.24.156.115:9302/;"
+    },
+    {
+      name: "St° Quitéria",
+      url: "http://198.24.156.115:9316/;"
+    },
+    {
+      name: "Redenção",
+      url: "http://198.24.156.115:9310/;"
+    },
+    {
+      name: "Sobral",
+      url: "http://198.24.156.115:9306/;"
     }
   ];
 
-  constructor(public navCtrl: NavController, private player: Html5Audio) {
+  constructor(
+      private player: Html5Audio,
+      public navCtrl: NavController
+  ) {
+
+    {
+      this.player.plaY
+    }
+
   }
 
   ionViewDidEnter() {
@@ -36,6 +62,10 @@ export class HomePage {
 
   stop() {
     this.player.stop();
+  }
+
+  pause(){
+    this.player.pause();
   }
 
 }

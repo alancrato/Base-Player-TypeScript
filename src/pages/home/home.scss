@@ -1,3 +1,52 @@
 page-home {
 
+  // Changes the background of the page.
+  ion-content {
+    background: #000 !important;
+  }
+
+  // Uncomment to disables page scrolling.
+  //     .no-scroll .scroll-content{
+  //         overflow: hidden;
+  //    }
+
+  // Class for the logo.
+  .logo {
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: -8vh;
+  }
+
+  // Positioning class for the header image and icon
+  .header {
+    position: relative;
+  }
+
+  // Side-menu icon color and size
+  ion-icon {
+    color: #FF2B41 !important;
+    font-size: 40px;
+  }
+
+  // Positioning class for the menu icon
+  .menu {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
+
+  // General class for the play and pause buttons.
+  .play {
+    width: 25%;
+    display: block;
+    margin: auto;
+    // margin-top: 2vh;
+  }
+
+  // Div class that holds the social media icons
+  .social {
+    margin-top: 2vh;
+  }
+
 }

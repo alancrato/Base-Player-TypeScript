@@ -1,5 +1,4 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-
 @Injectable()
 export class Html5Audio {
     @Output()
@@ -14,6 +13,8 @@ export class Html5Audio {
     readyStateInterval = null;
     url: string;
 
+    plaY: boolean = true;
+
     public play(url: string) {
         if (this.audioPlayer) {
             this.stop();
@@ -22,6 +23,7 @@ export class Html5Audio {
         this.audioPlayer = new Audio(this.url);
         this.isPlaying = true;
         this.audioPlayer.play();
+        this.plaY = false;
 
         this.audioPlayer.addEventListener("timeupdate", () => {
             if (this.audioPlayer) {
@@ -54,11 +56,14 @@ export class Html5Audio {
     pause() {
         this.isPlaying = false;
         this.audioPlayer.pause();
+        this.plaY = true;
     }
 
     stop() {
         this.isPlaying = false;
         this.audioPlayer.pause();
         this.audioPlayer = null;
+        this.plaY = true;
+
     }
 }
